@@ -1,5 +1,9 @@
 # W2D2: Async Control Flow
 
+The code we wrote in lecture can be found at the link below!
+
+REPO: https://github.com/NimaBoscarino/async-notes
+
 Hey everyone! Thanks for sitting in on today's lecture. It was awesome meeting you all!
 
 We started off by doing a little bit of review.
