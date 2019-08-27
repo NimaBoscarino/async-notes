@@ -1,110 +1,102 @@
-# W2D2: Async Control Flow
+# Tuesday, Week 2 Day 2
 
-The code we wrote in lecture can be found at the link below!
+Act one: Things are good...
 
-REPO: https://github.com/NimaBoscarino/async-notes
+Act 2: There's a new kid in town
 
-Hey everyone! Thanks for sitting in on today's lecture. It was awesome meeting you all!
+Act 3: Work with the new kid, helps us save the town from the monsters
 
-We started off by doing a little bit of review.
+------
 
-Review:
+What is JavaScript??
 
-## What is JavaScript?
+- a programming language
 
-- programming language
-  - give someone instructions
-  - 🤖 - beep boop!
-- language for communicating with:
-  - the browser
-  - other software
-  - APIs
-  - computers
-  - other people
-    - do keep this in mind!
+Booleans
+Strings
+Numbers
 
-## What are objects in javascript?
+Objects
+========
 
-- proper nouns
-- a container with certain properties
-  - can also hold other containers
-- key-value pair
-  - one thing symbolizes another
-  
+- Good for collecting stuff
+
 ```js
-let meal = {
-  drink: 'Milkshake with Vanilla + Whipped Cream',
-  mainCourse: 'Quarter Pounder with Cheese',
-  dessert: 'Chocolate Mousse',
-  afterMealDrink: 'Pimms'
-}
-
-meal.drink
-meal['drink']
-
-meal.price = 'Free ninety-nine'
-meal['price'] = 'Free ninety-nine'
+const numberToRemember = 722
+const nameToRemember = "Joestephanina"
+const foodToRemember = "Broccoli"
 ```
 
+Create an object
+
 ```js
-let mood = {
-  morning: 'Great!',
-  afternoon: 'Yup',
-  evening: 'mood'
+const thingsToRememberEmpty = {} // an empty object
+
+const thingsToRemember = {
+    number: 722,
+    name: 'Joestephanina',
+    food: 'Broccoli'
 }
 ```
 
-## What are functions?
-
-A set of a specialized instructions that can be given inputs and can return outputs.
+Getting a value from an object
 
 ```js
-const coolCode = function (name) {
-  console.log('Yeah!')
-  console.log('Cool!')
-  console.log('Mike WILL MADE IT')
-  console.log('Honorable C NOTE')
-  console.log('I care about you, ', name)
-}
+// thingsToRemember.number
+thingsToRemember["number"]
 
-coolCode('Nima')
-coolCode('Bradlina')
-coolCode('Kristoferette')
-
-const add3 = function (number) {
-  number + 3
-}
-
-console.log(add3(10))
+const key = "food"
+thingsToRemember[key]
 ```
 
-## What are Callbacks?
+--------
 
-- Function inception
-  - BWAAAAAAH 🎺
-- A function that's passed INTO another function
-- For reusability of code, so we can implement code in different scenarios to still be useful (reduce redundancy)
+## Async Control Flow
 
-Specifically, a callback is an action that another function can take.
-Sometimes we use callbacks because some actions don't happen SYNCLY
+```js
+const orderAndPrepare = function (food, quantity) {
+    for (let i = 0; i < quantity; i++) {
+        console.log("🍜")
+    }
 
-What do we sometimes have to wait for?
+    console.log('ding!')
+}
 
-- data from a server
-- data from the filesystem
-- setTimeout
-- any kind of networking stuff
 
-## DEMOS
+console.log('Welcome to Chile, what can I get you?')
+orderAndPrepare("Chili", 9999999)
 
-One of the demos we worked on today was a restaurant simulator. Take a look at the `food.js` script to see our restaurant script in action. We had to write it using callbacks because each of the food items take some _time_ to complete. By passing a callback to our `makeFries` (etc.) functions, we can give the functions something to do _after_ the food has been cooked.
 
-We also have another example called `wait.js` that has the neutral-happy-neutral face example. 
+// Not get to this until the previous line is finished
+console.log("Cool! Will be ready soon.")
 
-There's a surprise script in here called `sleepy.js`. What does this file do? Who knows! Run it and see :)
+sitDown()
+```
 
-`restaurant.js` has an example with an interactive restaurant. Press `1` or `2` to order food. You can make new orders while there's an order still running!
 
-There are a couple other files in here, take a look at what's going on with them! If you have any questions, please reach out!
 
-My name is @nima on Slack.
+SYNC
+
+ASYNC
+
+
+# RESTAURANT SIM 3000
+
+- Ordering food
+- Greetings
+- A menu
+- Serving
+
+A command line program that starts off with a greeting, and a menu with options.
+
+    - Chili, 2
+    - Bacon, 10
+    - Spicy Chili, 3
+    - Big Mac, 4
+
+    - Kale Smoothie, 7
+    - Water, 1
+    - Root Beer, 2
+
+- After selecting one option, that menu item will be created
+- You can immediately order again

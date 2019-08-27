@@ -1,84 +1,69 @@
-/*
-  1. Royale with Cheese - 10 seconds
-  2. Iced Tea - 2 seconds
-  3. Fries - 5 seconds
-*/
 
-const makeRoyaleWCheese = (nextDish) => {
-  setTimeout(() => {
-    console.log('🍔')
-    nextDish()
-  }, 4000)
+// A command line program that starts off with a greeting, and a menu with options.
+
+// - Chili, 2
+// - Bacon, 10
+// - Spicy Chili, 3
+// - Big Mac, 4
+
+// - Kale Smoothie, 7
+// - Water, 1
+// - Root Beer, 2
+
+// - After selecting one option, that menu item will be created
+// - You can immediately order again
+
+const printGreeting = () => {
+    console.log("Welcome to Lighthouse! What can I get you?")
 }
 
-const makeFries = (nextDish) => {
-  setTimeout(() => {
-    console.log('🍟')
-    nextDish()
-  }, 3000)
+const menu = [
+    ['Chili', 2],
+    ['Bacon', 10],
+    ['Spicy Chili', 3],
+    ['Big Mac', 4],
+    ['Kale Smoothie', 7],
+    ['Water', 1],
+    ['Root Beer', 2]
+]
+
+const printMenu = (menuItems) => {
+    for (const itemIndex in menuItems) {
+        const item = menuItems[itemIndex]
+        console.log("Press " + itemIndex + " " + item[0] + ": " + item[1])
+    }
 }
 
-const makeIcedTea = () => {
-  setTimeout(() => {
-    console.log('🍾')
-    console.log('done!')
-  }, 2000)
+const orderAndPrepare = function (item) {
+    setTimeout(() => {
+        console.log("Ding! Prepared a " + item[0])
+    }, item[1] * 1000)
 }
 
-const makeCoffee = () => {
-  setTimeout(() => {
-    console.log('☕️')
-    console.log('done!')
-  }, 3000)
-}
 
-const comboOne = () => {
-  console.log('Combo one!')
-  // Order 1
-  makeRoyaleWCheese(() => {
-    makeFries(() => {
-      makeIcedTea()
-    })
-  })
-}
-
-const comboTwo = () => {
-  console.log('Combo two!')
-  // Order 2
-  makeRoyaleWCheese(() => {
-    makeFries(() => {
-      makeCoffee()
-    })
-  })
-}
-
-/**
- * 
- * FOOD STUFF IS ABOVE
- */
+// printGreeting()
+// getSelection()
+// createItem()
 
 const stdin = process.stdin;
-// don't worry about these next two lines of setup work.
+
 stdin.setRawMode(true);
 stdin.setEncoding('utf8');
 
-////////////
-// Event Handling for User Input
-////////////
-
-// on any input from stdin (standard input), output a "." to stdout
+printGreeting()
+printMenu(menu)
 
 stdin.on('data', (key) => {
-  // \u0003 maps to ctrl+c input
-  if (key === '\u0003') {
-    process.exit();
-  }
+    if (key === '\u0003') {
+        process.exit();
+    }
 
-  if (key === '1') {
-    comboOne()
-  } else if (key === '2') {
-    comboTwo()
-  }
+    const item = menu[Number(key)]
+
+    if (item) {
+        console.log('Ordering ' + item[0])
+        orderAndPrepare(item)
+    } else {
+        console.log("Please try again")
+    }
 });
-
-console.log('What do you want?')
