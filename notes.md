@@ -1,102 +1,28 @@
-# Tuesday, Week 2 Day 2
+Nima Boscarino
+Lead Instructor
 
-Act one: Things are good...
+# SEPT 24, WEEK 2 DAY 2
 
-Act 2: There's a new kid in town
+2 FAST 2 CODE
 
-Act 3: Work with the new kid, helps us save the town from the monsters
+ASYNC PROGRAMMING (CONTROL FLOW)
 
-------
+===================
 
-What is JavaScript??
+- how do we deal with code that takes a while
 
-- a programming language
-
-Booleans
-Strings
-Numbers
-
-Objects
-========
-
-- Good for collecting stuff
-
-```js
-const numberToRemember = 722
-const nameToRemember = "Joestephanina"
-const foodToRemember = "Broccoli"
-```
-
-Create an object
-
-```js
-const thingsToRememberEmpty = {} // an empty object
-
-const thingsToRemember = {
-    number: 722,
-    name: 'Joestephanina',
-    food: 'Broccoli'
-}
-```
-
-Getting a value from an object
-
-```js
-// thingsToRemember.number
-thingsToRemember["number"]
-
-const key = "food"
-thingsToRemember[key]
-```
-
---------
-
-## Async Control Flow
-
-```js
-const orderAndPrepare = function (food, quantity) {
-    for (let i = 0; i < quantity; i++) {
-        console.log("🍜")
-    }
-
-    console.log('ding!')
-}
+- REPL: Read Evaluate Print Loop
 
 
-console.log('Welcome to Chile, what can I get you?')
-orderAndPrepare("Chili", 9999999)
+## RESTAURANT SIM
 
+### BIG OL JIMBOS
+### BIANCO BEANS COFFEE
 
-// Not get to this until the previous line is finished
-console.log("Cool! Will be ready soon.")
+- Side of mayo with fries
 
-sitDown()
-```
+1. Gumbo -> 2000
+2. Bianco Beans Flat White -> 500
+3. Terrence's Fries & Pies -> 5000
 
-
-
-SYNC
-
-ASYNC
-
-
-# RESTAURANT SIM 3000
-
-- Ordering food
-- Greetings
-- A menu
-- Serving
-
-A command line program that starts off with a greeting, and a menu with options.
-
-    - Chili, 2
-    - Bacon, 10
-    - Spicy Chili, 3
-    - Big Mac, 4
-
-    - Kale Smoothie, 7
-    - Water, 1
-    - Root Beer, 2
-
-- After selecting one option, that menu item will be created
-- You can immediately order again
+Welcome to Big Ol' Jimbo's!

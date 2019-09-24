@@ -99,7 +99,7 @@ What do we sometimes have to wait for?
 
 ## DEMOS
 
-### The message below is about the examples found in the `/old` folder.
+### The message below is about the examples found in the `/old` folder. There is also a folder called `/old_2` with another demo.
 
 One of the demos we worked on was a restaurant simulator. Take a look at the `food.js` script to see our restaurant script in action. We had to write it using callbacks because each of the food items take some _time_ to complete. By passing a callback to our `makeFries` (etc.) functions, we can give the functions something to do _after_ the food has been cooked.
 
